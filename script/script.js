@@ -173,4 +173,17 @@ let books = [
       ]
     }
   ]
- 
+
+
+
+// Funktion die alle Bücher auf der Startseite anzeigt
+function insertBooks(){
+    // Bücher anzeigen mit: Titel, Bild, Likes, Preis und Kommentaren
+}
+
+
+// Weitere Aufgaben:
+// Es gibt mindestens 3 Bücher auf der Seite zu sehen, hier kann man jeweils Kommentare hinzufügen
+// implementiere eine Like Funktion, welche die Herzfarbe ändert und die gefällt mir anzahl erhöht oder verringert
+// OPTIONAL: Du kannst Bücher als Favoriten markieren und dir gesondert anzeigen lassen
+// Responsive bis 320px Breite, alles responsive ohne Scrollbalken

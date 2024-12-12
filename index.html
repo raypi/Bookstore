@@ -9,7 +9,29 @@
     <script src="./script/script.js"></script>
     <title>Bookstore</title>
 </head>
-<body>
-    <h1>Bookstore</h1>
+<body  onload="insertBooks()">
+    <header>
+        <h1>Bookstore</h1>
+    </header>
+    <section class="mainsection">
+        <div class="helperdiv">
+            <div>
+                <h2>Our Books:</h2>
+            </div>    
+            <div id="booksGallery" class="maindiv">
+                
+            </div>
+        </div>    
+    </section>
+    <div class="overlay d_none" id="overlay">
+        <div id="overlay-container">
+            
+        </div>    
+    </div>
+    <footer>
+        <div>
+            <p>Bookstore 2024 by Ray</p>
+        </div>
+    </footer> 
 </body>
 </html>

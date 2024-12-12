@@ -1,0 +1,60 @@
+header{
+    height: 120px;
+    background-color: rgb(4, 36, 46);
+    display: flex;
+    align-items: center;
+}
+
+
+body{
+    background-color: rgb(2, 24, 33);
+    color: white;
+    margin: 0;
+}
+
+
+footer{
+    height: 120px;
+    background-color: rgb(4, 36, 46);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1{
+    text-align: center;
+}
+
+
+.mainsection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 240px);
+}
+
+
+.helperdiv{
+    width: 85vw;
+}
+
+
+.overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.303);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.d_none{
+    display: none;
+}
