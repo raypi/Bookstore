@@ -5,6 +5,11 @@ a {
 }
 
 
+input {
+    width: 400px;
+}
+
+
 a:hover {
     color: green;
     cursor: pointer;
@@ -107,6 +112,9 @@ h1{
 
 .bookDescription {
     width: 600px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .bookDescriptionButton{
@@ -115,10 +123,44 @@ h1{
 
 
 .commentBookContainer {
-    max-height: 100px;
+    max-height: 60px;
     width: 580px;
     overflow-y: auto;
-    border: 1px solid white;
     border-radius: 8px;
-    padding: 8px;
+}
+
+
+.icons8 {
+    font-size: 8px;
+    color: rgb(10, 50, 69);
+}
+
+
+.displayFlex {
+    display: flex;
+    align-items: center;
+}
+
+
+.imgDescriptionButton {
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+}
+
+
+.imgDescriptionButton:hover {
+    cursor: pointer;
+}
+
+
+.buyButton {
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+}
+
+
+.buyButton:hover {
+    cursor: pointer;
 }

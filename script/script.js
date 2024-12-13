@@ -23,8 +23,10 @@ function insertBooks(){
         <div class="bookPreview">
             <div><img class="imgBookPreview" src="${books[indexBook].img}"></img></div>
             <div class="bookDescription"> 
-              <p>Buchtitel: ${books[indexBook].name}</p>
-              <p>Author: ${books[indexBook].author}</p>
+              <div>
+                <p>Buchtitel: ${books[indexBook].name}</p>
+                <p>Author: ${books[indexBook].author}</p>
+              </div>  
               <div class="commentBookContainer">
                 <div class="commentBook">
                   <div class="commentAuthorName">
@@ -70,14 +72,20 @@ function insertBooks(){
                       Ich bin ein Kommentar zum Buch von Reno
                   </div>
                 </div>  
-                
               </div>
+               <div>
+              <label for="commentInput">Kommentar:</label>
+              <input type="text" id="commentInput" name="commentInput"> 
+              <button type="button">senden</button>
+            </div>
             </div>  
             <div class="bookDescriptionButton">
-              <p><a href="#">Like</a> Likes: ${books[indexBook].likes}</p>
+              <div class="displayFlex">
+               <img onclick="#" class="imgDescriptionButton" src="./img/icon/hart_white.png" alt=""></img>  <p>${books[indexBook].likes}</p>
+              </div>
+              <img onclick="#" class="imgDescriptionButton" src="./img/icon/favorits.png" alt=""></img>
               <p>Preis: ${books[indexBook].price} €<p>
-              <p><a href="#">Favorit</a></p>
-              <p>buy now</p>
+              <img onclick="#" class="buyButton" src="./img/icon/buy_white.png" alt=""></img
             </div>    
         </div>
     `;
