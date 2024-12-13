@@ -7,6 +7,7 @@ let books = [
       "price": 19.99,
       "publishedYear": 2018,
       "genre": "Fantasy",
+      "img": "./img/cover/book001.jpg",
       "comments": [
         {
           "name": "Leser123",
@@ -38,6 +39,7 @@ let books = [
       "price": 14.50,
       "publishedYear": 2021,
       "genre": "Fantasy",
+      "img": "./img/cover/book002.jpg",
       "comments": []
     },
     {
@@ -48,6 +50,7 @@ let books = [
       "price": 22.95,
       "publishedYear": 2019,
       "genre": "Romantik",
+      "img": "./img/cover/book003.jpg",
       "comments": [
         {
           "name": "LeserPeter",
@@ -79,6 +82,7 @@ let books = [
       "price": 18.00,
       "publishedYear": 2020,
       "genre": "Science-Fiction",
+      "img": "./img/cover/book004.jpg",
       "comments": [
         {
           "name": "BuchKenner",
@@ -98,6 +102,7 @@ let books = [
       "price": 16.75,
       "publishedYear": 2017,
       "genre": "Fantasy",
+      "img": "./img/cover/book005.jpg",
       "comments": []
     },
     {
@@ -108,6 +113,7 @@ let books = [
       "price": 12.30,
       "publishedYear": 2022,
       "genre": "Science-Fiction",
+      "img": "./img/cover/book006.png",
       "comments": [
         {
           "name": "BücherLiebhaber",
@@ -127,6 +133,7 @@ let books = [
       "price": 21.00,
       "publishedYear": 2015,
       "genre": "Science-Fiction",
+      "img": "./img/cover/book007.jpg",
       "comments": [
         {
           "name": "Leser123",
@@ -142,6 +149,7 @@ let books = [
       "price": 17.50,
       "publishedYear": 2020,
       "genre": "Fantasy",
+      "img": "./img/cover/book008.jpg",
       "comments": [
         {
           "name": "Bookworm92",
@@ -157,6 +165,7 @@ let books = [
       "price": 19.99,
       "publishedYear": 2016,
       "genre": "Romantik",
+      "img": "./img/cover/book009.jpg",
       "comments": [
         {
           "name": "Bibliophile23",
@@ -181,7 +190,6 @@ let books = [
 
 // Funktion die alle Bücher auf der Startseite anzeigt
 function insertBooks(){
-    // Bücher anzeigen mit: Titel, Bild, Likes, Preis und Kommentaren
     let contentRef = document.getElementById('booksGallery');
     contentRef.innerHTML = "";
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
@@ -191,10 +199,18 @@ function insertBooks(){
 
 
   // erstellt das HTML Element und gibt es zurück in die funktion Insert Books
+  // Bücher anzeigen mit: Titel, Bild, Likes, Preis und Kommentaren
   function getBook(indexBook) {
     return `
-        <div>
-            <p>Buchtitel: ${books[indexBook].name}</p>   
+        <div class="bookPreview">
+            <div><img class="imgBookPreview" src="${books[indexBook].img}"></img></div>
+            <div> 
+              <p>Buchtitel: ${books[indexBook].name}</p>
+              <p>Bild: <!-- ${books[indexBook].name} --></p> 
+              <p>Likes: ${books[indexBook].likes}</p> 
+              <p>Preis: ${books[indexBook].price}</p>
+              <p>Kommentare: Hier kommen die Kommentare</p>
+            </div>    
         </div>
     `;
 }  

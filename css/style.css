@@ -33,7 +33,6 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: calc(100vh - 240px);
 }
 
 
@@ -55,6 +54,35 @@ h1{
 }
 
 
-.d_none{
+.d_none {
     display: none;
+}
+
+
+.maindiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+
+.bookPreview {
+    object-fit: cover;
+    height: 400px;
+    width: 300px;
+    border: 2px solid rgb(170, 183, 189);
+    border-radius: 8px;   
+    filter: brightness(60%);
+    margin-bottom: 16px;
+}
+
+
+.imgBookPreview{
+    object-fit: cover;
+    height: 120px;
+    width: 90px;
+    border: 2px solid rgb(10, 50, 69);
+    border-radius: 8px;   
+    filter: brightness(60%);
 }
