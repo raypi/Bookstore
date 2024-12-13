@@ -175,11 +175,29 @@ let books = [
   ]
 
 
+  function init(){
+    insertBooks();
+  }
 
 // Funktion die alle Bücher auf der Startseite anzeigt
 function insertBooks(){
     // Bücher anzeigen mit: Titel, Bild, Likes, Preis und Kommentaren
-}
+    let contentRef = document.getElementById('booksGallery');
+    contentRef.innerHTML = "";
+    for (let indexBook = 0; indexBook < books.length; indexBook++) {
+        contentRef.innerHTML += getBook(indexBook);
+    }
+  }
+
+
+  // erstellt das HTML Element und gibt es zurück in die funktion Insert Books
+  function getBook(indexBook) {
+    return `
+        <div>
+            <p>Buchtitel: ${books[indexBook].name}</p>   
+        </div>
+    `;
+}  
 
 
 // Weitere Aufgaben:
@@ -187,3 +205,4 @@ function insertBooks(){
 // implementiere eine Like Funktion, welche die Herzfarbe ändert und die gefällt mir anzahl erhöht oder verringert
 // OPTIONAL: Du kannst Bücher als Favoriten markieren und dir gesondert anzeigen lassen
 // Responsive bis 320px Breite, alles responsive ohne Scrollbalken
+
