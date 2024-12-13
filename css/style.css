@@ -1,3 +1,17 @@
+a {
+    color: antiquewhite;
+    text-decoration: none;
+    
+}
+
+
+a:hover {
+    color: green;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
 header{
     height: 120px;
     background-color: rgb(4, 36, 46);
@@ -68,9 +82,10 @@ h1{
 
 
 .bookPreview {
-    object-fit: cover;
-    height: 400px;
-    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    height: 220px;
+    width: 1000px;
     border: 2px solid rgb(170, 183, 189);
     border-radius: 8px;   
     filter: brightness(60%);
@@ -80,9 +95,30 @@ h1{
 
 .imgBookPreview{
     object-fit: cover;
-    height: 120px;
-    width: 90px;
+    height: 200px;
+    width: 132px;
     border: 2px solid rgb(10, 50, 69);
     border-radius: 8px;   
     filter: brightness(60%);
+    margin: 8px;
+}
+
+
+
+.bookDescription {
+    width: 600px;
+}
+
+.bookDescriptionButton{
+    margin: 8px;
+}
+
+
+.commentBookContainer {
+    max-height: 100px;
+    width: 580px;
+    overflow-y: auto;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 8px;
 }

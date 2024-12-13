@@ -204,12 +204,62 @@ function insertBooks(){
     return `
         <div class="bookPreview">
             <div><img class="imgBookPreview" src="${books[indexBook].img}"></img></div>
-            <div> 
+            <div class="bookDescription"> 
               <p>Buchtitel: ${books[indexBook].name}</p>
-              <p>Bild: <!-- ${books[indexBook].name} --></p> 
-              <p>Likes: ${books[indexBook].likes}</p> 
-              <p>Preis: ${books[indexBook].price}</p>
-              <p>Kommentare: Hier kommen die Kommentare</p>
+              <p>Author: ${books[indexBook].author}</p>
+              <div class="commentBookContainer">
+                <div class="commentBook">
+                  <div class="commentAuthorName">
+                      Inge
+                  </div>
+                  <div class="commentTxt" >
+                      Ich bin ein Kommentar zum Buch von Inge
+                  </div>
+                </div> 
+                
+                <div class="commentBook">
+                  <div class="commentAuthorName">
+                      Mandy
+                  </div>
+                  <div class="commentTxt" >
+                      Ich bin ein Kommentar zum Buch von Mandy
+                  </div>
+                </div>  
+
+                <div class="commentBook">
+                  <div class="commentAuthorName">
+                      Klaus
+                  </div>
+                  <div class="commentTxt" >
+                      Ich bin ein Kommentar zum Buch von Klaus
+                  </div>
+                </div>  
+
+                <div class="commentBook">
+                  <div class="commentAuthorName">
+                      Peter
+                  </div>
+                  <div class="commentTxt" >
+                      Ich bin ein Kommentar zum Buch von Peter
+                  </div>
+                </div>  
+
+                <div class="commentBook">
+                  <div class="commentAuthorName">
+                      Reno
+                  </div>
+                  <div class="commentTxt" >
+                      Ich bin ein Kommentar zum Buch von Reno
+                  </div>
+                </div>  
+                
+              </div>
+            </div>  
+            <div class="bookDescriptionButton">
+              <p><a href="#">Like</a> Likes: ${books[indexBook].likes}</p>
+              <p>Preis: ${books[indexBook].price} €<p>
+              <p><a href="#">Favorit</a></p>
+              <p>buy now</p>
             </div>    
         </div>
     `;
