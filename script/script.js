@@ -24,13 +24,13 @@ function insertBooks(){
             <div><img class="imgBookPreview" src="${books[indexBook].img}"></img></div>
             <div class="bookDescription"> 
               <div>
-                <p>Buchtitel: ${books[indexBook].name}</p>
-                <p>Author: ${books[indexBook].author}</p>
+                <h2>Buchtitel: ${books[indexBook].name}</2>
+                <h3>Author: ${books[indexBook].author}</h3>
               </div>  
               <div class="commentBookContainer">
                 <div class="commentBook">
                   <div class="commentAuthorName">
-                      Inge
+                      Inge:
                   </div>
                   <div class="commentTxt" >
                       Ich bin ein Kommentar zum Buch von Inge
@@ -39,7 +39,7 @@ function insertBooks(){
                 
                 <div class="commentBook">
                   <div class="commentAuthorName">
-                      Mandy
+                      Mandy:
                   </div>
                   <div class="commentTxt" >
                       Ich bin ein Kommentar zum Buch von Mandy
@@ -48,7 +48,7 @@ function insertBooks(){
 
                 <div class="commentBook">
                   <div class="commentAuthorName">
-                      Klaus
+                      Klaus:
                   </div>
                   <div class="commentTxt" >
                       Ich bin ein Kommentar zum Buch von Klaus
@@ -57,7 +57,7 @@ function insertBooks(){
 
                 <div class="commentBook">
                   <div class="commentAuthorName">
-                      Peter
+                      Peter:
                   </div>
                   <div class="commentTxt" >
                       Ich bin ein Kommentar zum Buch von Peter
@@ -66,7 +66,7 @@ function insertBooks(){
 
                 <div class="commentBook">
                   <div class="commentAuthorName">
-                      Reno
+                      Reno: 
                   </div>
                   <div class="commentTxt" >
                       Ich bin ein Kommentar zum Buch von Reno
