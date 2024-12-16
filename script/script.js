@@ -1,10 +1,7 @@
+function init(){
+  insertBooks();
+}
 
-
-  console.log(books.findIndex((book) => book['name'] === 'Die Geheimnisse des Ozeans'));
-
-  function init(){
-    insertBooks();
-  }
 
 // Funktion die alle Bücher auf der Startseite anzeigt
 function insertBooks(){
@@ -13,7 +10,30 @@ function insertBooks(){
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
         contentRef.innerHTML += getBook(indexBook);
     }
+    // Ruft insetComment für jedes Buch auf
+    for (let indexBook = 0; indexBook < books.length; indexBook++){
+      insertComment(indexBook);
+    }
   }
+
+
+// Funktion, die Kommentare eines Buches in das div "bookComment" einfügt
+function insertComment(indexBook) {
+  // Hole das Buch aus dem books-Array anhand des Index
+  let book = books[indexBook];
+
+  // Prüfe, ob das Buch und seine Kommentare existieren
+  if (book && book.comments) {
+      // Erstelle den HTML-String für die Kommentare mit getTheComment
+      let commentsHTML = getTheComment(book.comments);
+
+      // Füge die Kommentare in das passende div ein
+      let commentContainers = document.querySelectorAll('.bookComment'); // Selektiere alle Kommentar-Divs
+      if (commentContainers[indexBook]) {
+          commentContainers[indexBook].innerHTML = commentsHTML; // Füge Kommentare ins richtige Element ein
+      }
+  }
+}
 
 
   // erstellt das HTML Element und gibt es zurück in die funktion Insert Books
@@ -24,73 +44,37 @@ function insertBooks(){
             <div><img class="imgBookPreview" src="${books[indexBook].img}"></img></div>
             <div class="bookDescription"> 
               <div>
-                <h2>Buchtitel: ${books[indexBook].name}</2>
+                <h2>Buchtitel: ${books[indexBook].name}</h2>
                 <h3>Author: ${books[indexBook].author}</h3>
               </div>  
-              <div class="commentBookContainer">
-                <div class="commentBook">
-                  <div class="commentAuthorName">
-                      Inge:
-                  </div>
-                  <div class="commentTxt" >
-                      Ich bin ein Kommentar zum Buch von Inge
-                  </div>
-                </div> 
-                
-                <div class="commentBook">
-                  <div class="commentAuthorName">
-                      Mandy:
-                  </div>
-                  <div class="commentTxt" >
-                      Ich bin ein Kommentar zum Buch von Mandy
-                  </div>
-                </div>  
-
-                <div class="commentBook">
-                  <div class="commentAuthorName">
-                      Klaus:
-                  </div>
-                  <div class="commentTxt" >
-                      Ich bin ein Kommentar zum Buch von Klaus
-                  </div>
-                </div>  
-
-                <div class="commentBook">
-                  <div class="commentAuthorName">
-                      Peter:
-                  </div>
-                  <div class="commentTxt" >
-                      Ich bin ein Kommentar zum Buch von Peter
-                  </div>
-                </div>  
-
-                <div class="commentBook">
-                  <div class="commentAuthorName">
-                      Reno: 
-                  </div>
-                  <div class="commentTxt" >
-                      Ich bin ein Kommentar zum Buch von Reno
-                  </div>
-                </div>  
+              <div class="bookComment commentBookContainer"></div>
+              <div>
+                <label for="commentInput">Kommentar:</label>
+                <input type="text" id="commentInput" name="commentInput"> 
+                <button type="button">senden</button>
               </div>
-               <div>
-              <label for="commentInput">Kommentar:</label>
-              <input type="text" id="commentInput" name="commentInput"> 
-              <button type="button">senden</button>
-            </div>
             </div>  
             <div class="bookDescriptionButton">
               <div class="displayFlex">
-               <img onclick="#" class="imgDescriptionButton" src="./img/icon/hart_white.png" alt=""></img>  <p>${books[indexBook].likes}</p>
+                <img onclick="#" class="imgDescriptionButton" src="./img/icon/hart_white.png" alt=""></img>  
+                <p>${books[indexBook].likes}</p>
               </div>
               <img onclick="#" class="imgDescriptionButton" src="./img/icon/favorits.png" alt=""></img>
-              <p>Preis: ${books[indexBook].price} €<p>
-              <img onclick="#" class="buyButton" src="./img/icon/buy_white.png" alt=""></img
+              <p>Preis: ${books[indexBook].price} €</p>
+              <img onclick="#" class="buyButton" src="./img/icon/buy_white.png" alt=""></img>
             </div>    
         </div>
     `;
-}  
+}
 
+
+function getTheComment(comments) {
+  let commentsHTML = "";
+  comments.forEach(commentObj => {
+      commentsHTML += `<p><strong>${commentObj.name}:</strong> ${commentObj.comment}</p>\n`;
+  });
+  return commentsHTML;
+}
 
 // Weitere Aufgaben:
 // Es gibt mindestens 3 Bücher auf der Seite zu sehen, hier kann man jeweils Kommentare hinzufügen
