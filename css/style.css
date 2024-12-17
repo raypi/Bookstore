@@ -170,3 +170,8 @@ h1{
 .buyButton:hover {
     cursor: pointer;
 }
+
+
+.commentFailDiv {
+    color: red;
+}

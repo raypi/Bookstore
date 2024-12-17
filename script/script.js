@@ -49,9 +49,11 @@ function insertComment(indexBook) {
               </div>  
               <div class="bookComment commentBookContainer"></div>
               <div>
-                <label for="commentInput">Kommentar:</label>
-                <input type="text" id="commentInput" name="commentInput"> 
-                <button type="button">senden</button>
+                <label for="commentInput_${indexBook}">Kommentar:</label>
+                <input type="text" id="commentInput_${indexBook}" name="commentInput"> 
+                <button onclick="addNote(${indexBook})" id="commentInputButton_${indexBook}" type="button">senden</button>
+              </div>
+              <div id="commentFail_${indexBook}" class="commentFailDiv">
               </div>
             </div>  
             <div class="bookDescriptionButton">
@@ -68,12 +70,42 @@ function insertComment(indexBook) {
 }
 
 
+// fügt die Kommentare ein
 function getTheComment(comments) {
   let commentsHTML = "";
   comments.forEach(commentObj => {
       commentsHTML += `<p><strong>${commentObj.name}:</strong> ${commentObj.comment}</p>\n`;
   });
   return commentsHTML;
+}
+
+
+// prüft ob eingabe im Kommentarfeld vorhanden, wenn vorhanden speichert es den Kommentar als anonym
+function addNote(indexBook) {
+  // erstellt Dynamische IDs für Input-Feld und Fehler-Div
+  const inputField = document.getElementById(`commentInput_${indexBook}`);
+  const failDiv = document.getElementById(`commentFail_${indexBook}`);
+  
+  // prüft ob eingabe vorhanden
+  const commentText = inputField.value.trim();
+  if (commentText === "") {
+      failDiv.textContent = "Bitte zuerst Kommentar eintragen, dann senden!";
+      return; // Funktion beenden, wenn keine Eingabe vorhanden ist
+  }
+
+  // speichert vorhandenen Kommentar
+  const book = books[indexBook];
+  book.comments.push({
+      name: "Anonym",
+      comment: commentText
+  });
+
+  // aktualisiert die vorhandenen kommentare neu 
+  insertComment(indexBook);
+
+  // Input-Feld und Fehler-Div zurücksetzen
+  inputField.value = "";
+  failDiv.textContent = "";
 }
 
 // Weitere Aufgaben:
