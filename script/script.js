@@ -1,3 +1,4 @@
+// init function beim laden der Seite im Body
 function init(){
   insertBooks();
 }
@@ -36,37 +37,43 @@ function insertComment(indexBook) {
 }
 
 
-  // erstellt das HTML Element und gibt es zurück in die funktion Insert Books
-  // Bücher anzeigen mit: Titel, Bild, Likes, Preis und Kommentaren
-  function getBook(indexBook) {
-    return `
-        <div class="bookPreview">
-            <div><img class="imgBookPreview" src="${books[indexBook].img}"></img></div>
-            <div class="bookDescription"> 
+// erstellt das HTML Element und gibt es zurück in die funktion Insert Books
+// Bücher anzeigen mit: Titel, Bild, Likes, Preis und Kommentaren
+function getBook(indexBook) {
+  const heartSrc = books[indexBook].liked ? "./img/icon/hart_red.png" : "./img/icon/hart_white.png";
+  return `
+      <div class="bookPreview">
+          <div><img class="imgBookPreview" src="${books[indexBook].img}"></img></div>
+          <div class="bookDescription"> 
+            <div>
+              <h2>Buchtitel: ${books[indexBook].name}</h2>
+              <h3>Author: ${books[indexBook].author}</h3>
+            </div> 
+            <div>
+              <p>Kommentare:</p> 
+            </div>   
+              <div class="bookComment commentBookContainer">
+              </div> 
               <div>
-                <h2>Buchtitel: ${books[indexBook].name}</h2>
-                <h3>Author: ${books[indexBook].author}</h3>
-              </div>  
-              <div class="bookComment commentBookContainer"></div>
-              <div>
-                <label for="commentInput_${indexBook}">Kommentar:</label>
-                <input type="text" id="commentInput_${indexBook}" name="commentInput"> 
-                <button onclick="addNote(${indexBook})" id="commentInputButton_${indexBook}" type="button">senden</button>
-              </div>
-              <div id="commentFail_${indexBook}" class="commentFailDiv">
-              </div>
-            </div>  
-            <div class="bookDescriptionButton">
-              <div class="displayFlex">
-                <img onclick="#" class="imgDescriptionButton" src="./img/icon/hart_white.png" alt=""></img>  
-                <p>${books[indexBook].likes}</p>
-              </div>
-              <img onclick="#" class="imgDescriptionButton" src="./img/icon/favorits.png" alt=""></img>
-              <p>Preis: ${books[indexBook].price} €</p>
-              <img onclick="#" class="buyButton" src="./img/icon/buy_white.png" alt=""></img>
-            </div>    
-        </div>
-    `;
+              <label for="commentInput_${indexBook}">Kommentar:</label>
+              <input type="text" id="commentInput_${indexBook}" name="commentInput"> 
+              <button onclick="addNote(${indexBook})" id="commentInputButton_${indexBook}" type="button">senden</button>
+            </div>
+            <div id="commentFail_${indexBook}" class="commentFailDiv">
+            </div>
+          </div>  
+          <div class="bookDescriptionButton">
+            <div class="displayFlex">
+              <img id="likeHeart_${indexBook}" onclick="pushLikeBtn(${indexBook})" 
+                   class="imgDescriptionButton" src="${heartSrc}" alt="like button"></img>  
+              <p id="likeCount_${indexBook}">${books[indexBook].likes}</p>
+            </div>
+            <img onclick="#" class="imgDescriptionButton" src="./img/icon/favorits.png" alt=""></img>
+            <p>Preis: ${books[indexBook].price} €</p>
+            <img onclick="#" class="buyButton" src="./img/icon/buy_white.png" alt=""></img>
+          </div>    
+      </div>
+  `;
 }
 
 
@@ -106,6 +113,30 @@ function addNote(indexBook) {
   // Input-Feld und Fehler-Div zurücksetzen
   inputField.value = "";
   failDiv.textContent = "";
+}
+
+
+// Drücken des Like BTN ändert die Farbe des Herzes und den Counter
+function pushLikeBtn(indexBook) {
+  const book = books[indexBook];
+  const likeHeart = document.getElementById(`likeHeart_${indexBook}`);
+  const likeCount = document.getElementById(`likeCount_${indexBook}`);
+
+  // Wenn `liked` true war, wird es false und die Likes werden um 1 verringert
+  if (book.liked) {
+      book.liked = false;
+      book.likes--;
+      likeHeart.src = "./img/icon/hart_white.png"; // Weißes Herz setzen
+  } 
+  // Wenn `liked` false war, wird es true und die Likes werden um 1 erhöht
+  else {
+      book.liked = true;
+      book.likes++;
+      likeHeart.src = "./img/icon/hart_red.png"; // Rotes Herz setzen
+  }
+
+  // Likes-Wert aktualisieren
+  likeCount.textContent = book.likes;
 }
 
 // Weitere Aufgaben:
