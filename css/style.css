@@ -105,7 +105,8 @@ footer{
     display: flex;
     justify-content: space-between;
     height: auto;
-    width: 1000px;
+    width: auto;
+    max-width: 1000px;
     border: 2px solid rgb(170, 183, 189);
     border-radius: 8px;   
     filter: brightness(60%);
@@ -232,3 +233,47 @@ input {
     width: 430px;
 }
 }
+
+@media (max-width: 750px){
+
+    h1 {
+        font-size: 24px;
+    }
+    
+    
+    h2 {
+        font-size: 16px;
+    }
+    
+    
+    h3 {
+        font-size: 12px;
+    }
+    
+    p {
+        font-size: 8px;
+}
+
+
+input {
+    width: 200px;
+}
+
+
+.bookDescription {
+    width: 350px;
+}
+
+
+.commentBookContainer {
+    width: 330px;
+}
+
+
+.imgDescriptionButton {
+    width: 24px;
+    height: 24px;
+}
+}
+
+
