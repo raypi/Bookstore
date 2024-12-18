@@ -74,9 +74,9 @@ function getBook(indexBook) {
                    class="imgDescriptionButton" src="${heartSrc}" alt="like button"></img>  
               <p id="likeCount_${indexBook}">${books[indexBook].likes}</p>
             </div>
-            <img onclick="#" class="imgDescriptionButton" src="./img/icon/favorits.png" alt=""></img>
+            <!-- <img onclick="#" class="imgDescriptionButton" src="./img/icon/favorits.png" alt=""></img> -->
             <p>Preis: ${books[indexBook].price.toFixed(2)} €</p>
-            <img onclick="#" class="buyButton" src="./img/icon/buy_white.png" alt=""></img>
+           <!-- <img onclick="#" class="buyButton" src="./img/icon/buy_white.png" alt=""></img> -->
           </div>    
       </div>
   `;

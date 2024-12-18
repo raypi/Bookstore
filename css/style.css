@@ -1,27 +1,35 @@
 a {
     color: antiquewhite;
-    text-decoration: none;
-    
+    text-decoration: none;    
 }
 
+
+label {
+    margin-left: 8px;
+    font-size: 16px;
+}
 
 h1 {
     text-align: center;
     font-size: 32px;
+    margin-left: 8px;
 }
 
 
 h2 {
     font-size: 24px;
+    margin-left: 8px;
 }
 
 
 h3 {
     font-size: 20px;
+    margin-left: 8px;
 }
 
 p {
     font-size: 16px;
+    margin-left: 8px;
 }
 
 
@@ -262,6 +270,7 @@ input {
 
 .bookDescription {
     width: 350px;
+    flex-wrap: wrap;
 }
 
 
@@ -277,3 +286,64 @@ input {
 }
 
 
+@media (max-width: 650px){
+
+
+    h1 {
+        font-size: 16px;
+    }
+    
+    
+    h2 {
+        font-size: 12px;
+    }
+    
+    
+    h3 {
+        font-size: 10px;
+    }
+    
+
+input {
+    width: 200px;
+}
+
+
+.bookDescription {
+    width: 300px;
+}
+
+
+.commentBookContainer {
+    width: 280px;
+}
+
+
+.imgDescriptionButton {
+    width: 24px;
+    height: 24px;
+}
+
+
+.bookPreview {
+    flex-direction: column;
+}
+
+
+.inputSection {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.bookDescriptionButton{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.maindiv {
+    flex-wrap: wrap;
+}
+}
