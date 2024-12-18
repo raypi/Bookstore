@@ -52,18 +52,24 @@ function getBook(indexBook) {
             <div>
               <p>Kommentare:</p> 
             </div>   
-              <div class="bookComment commentBookContainer">
-              </div> 
+            <div class="bookComment commentBookContainer">
+            </div> 
+            <div class="inputSection">
               <div>
-              <label for="commentInput_${indexBook}">Kommentar:</label>
-              <input type="text" id="commentInput_${indexBook}" name="commentInput"> 
-              <button onclick="addNote(${indexBook})" id="commentInputButton_${indexBook}" type="button">senden</button>
+                <label for="commentInput_${indexBook}">Kommentar:</label>
+              </div>
+              <div>
+                <input type="text" id="commentInput_${indexBook}" name="commentInput">
+              </div>
+              <div>
+                <button onclick="addNote(${indexBook})" id="commentInputButton_${indexBook}" type="button">senden</button>
+              </div>
             </div>
             <div id="commentFail_${indexBook}" class="commentFailDiv">
             </div>
           </div>  
           <div class="bookDescriptionButton">
-            <div class="displayFlex">
+            <div class="buttonDiv">
               <img id="likeHeart_${indexBook}" onclick="pushLikeBtn(${indexBook})" 
                    class="imgDescriptionButton" src="${heartSrc}" alt="like button"></img>  
               <p id="likeCount_${indexBook}">${books[indexBook].likes}</p>
